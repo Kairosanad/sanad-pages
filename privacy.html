@@ -1,104 +1,331 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سياسة الخصوصية — سند (Sanad)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ar="سياسة الخصوصية — سند (Sanad-POS)" data-en="Privacy Policy — Sanad-POS">Privacy Policy | سياسة الخصوصية — Sanad-POS</title>
+<meta name="description"
+      content="Sanad-POS Privacy Policy: what data we process, Google Sheets sync, retention and your rights. سياسة الخصوصية لسند."
+      data-ar="سياسة خصوصية سند: البيانات التي نعالجها، ومزامنة Google Sheets، والاحتفاظ بالبيانات وحقوقك."
+      data-en="Sanad-POS Privacy Policy: what data we process, Google Sheets sync, retention and your rights.">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="brand/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <style>
-  body {
-    font-family: -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-    background: #F0EDDE;
-    color: #09453D;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  h1 {
-    color: #960D41;
-    border-bottom: 3px solid #960D41;
-    padding-bottom: 12px;
-  }
-  h2 {
-    color: #09453D;
-    margin-top: 32px;
-  }
-  a { color: #960D41; }
-  .updated {
-    color: #666;
-    font-size: 0.9em;
-    margin-bottom: 32px;
-  }
-  ul { padding-right: 20px; }
+:root{--green:#09453D;--burg:#960D41;--cream:#F0EDDE;--taupe:#C8C1AF;--paper:#F8F6EC;--muted:#4a5f5a}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--green);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",system-ui,-apple-system,Arial,sans-serif;font-size:17px;line-height:1.85}
+html[data-lang="ar"] .en{display:none}
+html[data-lang="en"] .ar{display:none}
+html[lang="en"] h1,html[lang="en"] h2{font-family:Georgia,"Times New Roman",serif}
+a{color:var(--burg);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--burg);outline-offset:3px;border-radius:4px}
+img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+.top{border-bottom:1px solid var(--taupe);background:var(--paper)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{height:34px;width:auto}
+.brand .word{height:26px;width:auto}
+.nav{display:flex;align-items:center;gap:20px;font-size:15px}
+.nav a{text-decoration:none;font-weight:600}
+.nav a:hover{text-decoration:underline}
+.lang-btn{font:inherit;font-size:15px;color:var(--burg);background:transparent;border:1.5px solid var(--burg);border-radius:999px;padding:3px 16px;cursor:pointer}
+.lang-btn:hover{background:var(--burg);color:#fff}
+
+/* legal documents */
+.doc{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+.doc h1{font-size:2rem;line-height:1.35;color:var(--burg);margin:0 0 6px}
+.doc .updated{color:var(--muted);font-size:.92rem;margin:0 0 24px}
+.doc h2{font-size:1.25rem;line-height:1.5;margin:40px 0 10px;padding-top:18px;border-top:1px solid var(--taupe)}
+.doc h3{font-size:1.02rem;margin:22px 0 6px;color:var(--burg)}
+.doc p,.doc ul,.doc ol{margin:0 0 14px}
+.doc ul,.doc ol{padding-inline-start:1.4em}
+.doc li{margin-bottom:6px}
+code{background:rgba(9,69,61,.08);padding:1px 6px;border-radius:4px;font-size:.9em;direction:ltr;unicode-bidi:isolate}
+.toc{background:var(--paper);border:1px solid var(--taupe);border-radius:8px;padding:14px 22px;margin:0 0 8px;font-size:.95rem}
+.toc ol{margin:0;columns:2;column-gap:32px}
+.note{background:var(--paper);border-inline-start:4px solid var(--burg);padding:14px 18px;margin:18px 0;border-radius:4px}
+.note p{margin:0}
+.tbl-wrap{overflow-x:auto;margin:0 0 14px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:start;padding:10px 12px;border-bottom:1px solid var(--taupe);vertical-align:top}
+th{color:var(--burg);font-weight:700}
+
+/* home */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding:64px 0 48px}
+.hero h1{font-size:2.5rem;line-height:1.35;margin:0 0 16px;color:var(--green)}
+.hero p{margin:0 0 14px;max-width:34em;color:var(--muted);font-size:1.08rem}
+.hero .small{font-size:.95rem}
+.hero-art{display:flex;justify-content:center}
+.hero-art img{width:min(100%,250px);height:auto}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.btn{display:inline-block;padding:11px 28px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid transparent}
+.btn.primary{background:var(--burg);color:#fff}
+.btn.primary:hover{background:#7a0a34}
+.btn.ghost{border-color:var(--green);color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:var(--cream)}
+.section{padding:40px 0}
+.section>h2{font-size:1.6rem;margin:0 0 8px}
+.section>.lead{margin:0 0 24px;color:var(--muted);max-width:40em}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.feat>div{border-top:1px solid var(--taupe);padding:18px 0 14px}
+.feat h3{margin:0 0 4px;font-size:1.08rem}
+.feat p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.8}
+.callout{background:var(--paper);border:1px solid var(--taupe);border-radius:8px;padding:26px 28px;max-width:760px}
+.callout h2{margin:0 0 8px;font-size:1.3rem}
+.callout p{margin:0 0 10px}
+.callout p:last-child{margin:0}
+
+.foot{border-top:1px solid var(--taupe);padding:28px 0 44px;color:var(--muted);font-size:.95rem;background:var(--paper)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+
+@media(max-width:720px){
+  .hero{grid-template-columns:1fr;gap:24px;padding-top:36px}
+  .hero-art{order:-1}.hero-art img{width:110px}
+  .hero h1{font-size:1.9rem}
+  .feat{grid-template-columns:1fr}
+  .toc ol{columns:1}
+  .doc h1{font-size:1.65rem}
+  .nav a.hide-sm{display:none}
+}
+@media(prefers-reduced-motion:no-preference){.btn,.lang-btn{transition:background .15s,color .15s}}
 </style>
+<script>
+(function () {
+  var d = document.documentElement;
+  var KEY = 'sanad_site_lang';
+  function pick() {
+    var l = 'ar';
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      var s = localStorage.getItem(KEY);
+      if (q === 'ar' || q === 'en') l = q;
+      else if (s === 'ar' || s === 'en') l = s;
+      else {
+        var n = (navigator.language || 'ar').toLowerCase();
+        l = n.indexOf('en') === 0 ? 'en' : 'ar';
+      }
+    } catch (e) {}
+    return l;
+  }
+  function apply(l) {
+    d.setAttribute('lang', l);
+    d.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    d.setAttribute('data-lang', l);
+    var t = document.querySelector('title');
+    if (t && t.getAttribute('data-' + l)) document.title = t.getAttribute('data-' + l);
+    var m = document.querySelector('meta[name="description"]');
+    if (m && m.getAttribute('data-' + l)) m.setAttribute('content', m.getAttribute('data-' + l));
+    var b = document.getElementById('lang-btn');
+    if (b) {
+      b.textContent = l === 'ar' ? 'English' : 'العربية';
+      b.setAttribute('lang', l === 'ar' ? 'en' : 'ar');
+      b.setAttribute('aria-label', l === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+    }
+  }
+  var cur = pick();
+  apply(cur);
+  document.addEventListener('DOMContentLoaded', function () {
+    apply(cur);
+    var b = document.getElementById('lang-btn');
+    if (b) b.addEventListener('click', function () {
+      cur = cur === 'ar' ? 'en' : 'ar';
+      try { localStorage.setItem(KEY, cur); } catch (e) {}
+      apply(cur);
+    });
+  });
+})();
+</script>
+<noscript><style>html[data-lang] .ar,html[data-lang] .en{display:revert!important}#lang-btn{display:none}</style></noscript>
 </head>
 <body>
 
-<h1>سياسة الخصوصية — سند (Sanad)</h1>
-<p class="updated">آخر تحديث: سبتمبر 2026</p>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Sanad-POS">
+      <img class="mark" src="brand/logo-mark.png" alt="" width="32" height="34">
+      <img class="word ar" src="brand/logo-ar.png" alt="سند" width="60" height="26">
+      <img class="word en" src="brand/logo-en.png" alt="Sanad" width="79" height="26">
+    </a>
+    <nav class="nav">
+      <a class="hide-sm" href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a class="hide-sm" href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button id="lang-btn" class="lang-btn" type="button" aria-label="Switch to English">English</button>
+    </nav>
+  </div>
+</header>
 
-<p>
-سند (Sanad) هو نظام لإدارة نقاط البيع (POS) والمخزون للمتاجر التجزئة. تصف هذه الصفحة كيفية
-جمعنا واستخدامنا وحمايتنا لبيانات المستخدمين الذين يستخدمون التطبيق.
-</p>
+<main>
 
-<h2>1. البيانات التي نجمعها</h2>
-<p>يقوم النظام بتخزين البيانات التالية المرتبطة بحساب المتجر المشترك في الخدمة:</p>
-<ul>
-  <li>بيانات الحساب: الاسم، البريد الإلكتروني، رقم الهاتف (اختياري).</li>
-  <li>بيانات تشغيلية: المنتجات، المخزون، الفواتير، المرتجعات، الموردين، والمصاريف الخاصة بالمتجر.</li>
-  <li>بيانات العملاء (اختيارية): اسم ورقم هاتف العميل عند تسجيله في فاتورة بيع، بإدخال الكاشير.</li>
-  <li>سجلات تدقيق (Audit Log) للعمليات الحساسة، لأغراض الأمان والمساءلة داخل الحساب.</li>
-</ul>
+<article class="doc ar" lang="ar" dir="rtl">
+  <h1>سياسة الخصوصية — سند (Sanad-POS)</h1>
+  <p class="updated">آخر تحديث: أكتوبر 2026</p>
 
-<h2>2. الربط مع حساب Google (Google Sheets)</h2>
-<p>
-يوفر سند ميزة اختيارية لمزامنة نسخة احتياطية من بيانات المبيعات مع ملف Google Sheets مملوك
-لصاحب الحساب، وذلك عبر صلاحية Google OAuth محدودة (نطاق <code>drive.file</code>) يمنحها
-المستخدم صراحةً. تسمح هذه الصلاحية للتطبيق بالوصول فقط إلى الملفات التي ينشئها بنفسه ولا تتيح له
-الوصول إلى باقي ملفات المستخدم.
-</p>
-<ul>
-  <li>يُستخدم هذا الاتصال حصريًا لإنشاء ملف Google Sheets واحد خاص بنسخة سند الاحتياطية، وكتابة بيانات النسخة (مبيعات، مخزون) فيه، ضمن حساب Google الخاص بالمستخدم نفسه.</li>
-  <li>لا يصل سند إلى أي ملف آخر في Google Drive أو Google Sheets الخاص بالمستخدم، ولا يقرأ ملفاته الأخرى.</li>
-  <li>نطلب أيضًا عنوان بريدك الإلكتروني في Google لمعرفة الحساب المرتبط فقط.</li>
-  <li>يتم تخزين رمز الوصول (Access Token) الخاص بـ Google مشفّرًا (AES) في قاعدة البيانات، ولا يُشارك مع أي طرف ثالث.</li>
-  <li>يمكن للمستخدم إلغاء هذا الربط في أي وقت من إعدادات حسابه في سند، أو من صفحة أذونات حساب Google الخاص به مباشرة.</li>
-</ul>
+  <p>سند نظام ويب لإدارة المبيعات والمخزون لمتاجر التجزئة. توضح هذه السياسة أنواع البيانات التي نعالجها، ولماذا، وكيف نحميها، وكيف تمارس حقوقك. تنطبق على هذا الموقع وعلى تطبيق سند.</p>
 
-<h2>3. كيف نستخدم البيانات</h2>
-<ul>
-  <li>تشغيل الخدمة الأساسية (نقطة البيع، المخزون، الفواتير، التقارير).</li>
-  <li>إرسال تنبيهات تشغيلية (مثل تنبيهات انتهاء الاشتراك) عبر البريد الإلكتروني.</li>
-  <li>توفير نسخ احتياطية للبيانات (محليًا، أو عبر Google Sheets إذا فعّلها المستخدم).</li>
-</ul>
-<p>لا تُستخدم بيانات المستخدمين لأغراض إعلانية، ولا تُباع أو تُشارك مع أي طرف ثالث لأغراض تسويقية.</p>
+  <h2>1. من نحن ودورنا</h2>
+  <p>تُقدَّم الخدمة للتجار باشتراك، ويُنشئ فريق سند حسابات المتاجر؛ لا يوجد تسجيل ذاتي.</p>
+  <ul>
+    <li><strong>بيانات المتجر وعملائه</strong> التي يُدخلها صاحب المتجر: هو الجهة المتحكمة فيها، وسند يعالجها نيابةً عنه لتشغيل الخدمة فقط.</li>
+    <li><strong>بيانات حساب المتجر والاشتراك:</strong> نحدد نحن أغراض استخدامها.</li>
+  </ul>
 
-<h2>4. تخزين البيانات وأمانها</h2>
-<ul>
-  <li>تُستضاف قاعدة البيانات في منطقة الاتحاد الأوروبي (Frankfurt).</li>
-  <li>كلمات المرور وأرقام الـPIN تُخزَّن مشفّرة بخوارزمية Argon2id، ولا تُخزَّن كنص صريح إطلاقًا.</li>
-  <li>يتم عزل بيانات كل متجر (حساب) بالكامل عن بيانات المتاجر الأخرى، وكذلك عزل بيانات كل فرع عن باقي فروع نفس الحساب.</li>
-</ul>
+  <h2>2. البيانات التي نعالجها</h2>
+  <ul>
+    <li><strong>بيانات الحساب والاشتراك:</strong> اسم المتجر وبيانات التواصل مع المالك، وبيانات الاشتراك.</li>
+    <li><strong>بيانات المستخدمين:</strong> الاسم والبريد الإلكتروني والهاتف (اختياري) والدور داخل المتجر. بيانات الدخول تُحفظ بشكل مؤمَّن ولا تُحفظ كنص صريح.</li>
+    <li><strong>بيانات التشغيل التي يدخلها المتجر:</strong> المنتجات والمخزون والمبيعات والمرتجعات والموردون والمصروفات وما يتصل بها.</li>
+    <li><strong>بيانات عملاء المتجر (اختيارية):</strong> الاسم ورقم الهاتف إذا سجّلهما المتجر في الفاتورة.</li>
+    <li><strong>ملفات يرفعها المستخدم:</strong> مثل صور المنتجات والشعارات ومرفقات الشكاوى.</li>
+    <li><strong>سجلات النشاط:</strong> لأغراض الأمان والمساءلة داخل الحساب.</li>
+    <li><strong>رسائلك إلينا:</strong> مثل الشكاوى والاقتراحات.</li>
+  </ul>
+  <p>لا نستخدم أدوات تحليلات أو تتبع إعلاني.</p>
 
-<h2>5. الاحتفاظ بالبيانات والحذف</h2>
-<p>
-تُحتفظ البيانات التشغيلية (الفواتير، السجلات المالية) طالما الحساب نشطًا، ولا تُحذف تلقائيًا
-عند انتهاء الاشتراك. لطلب حذف بيانات حساب معين، يمكن التواصل معنا عبر البريد الإلكتروني أدناه.
-</p>
+  <h2 id="google-ar">3. الربط مع Google (Google Sheets)</h2>
+  <p>ميزة اختيارية يفعّلها صاحب المتجر بنفسه، تحفظ نسخة احتياطية من تقارير المتجر في ملف Google Sheets داخل حساب Google الخاص به.</p>
+  <ul>
+    <li><strong>الصلاحية المطلوبة:</strong> <code>https://www.googleapis.com/auth/drive.file</code> فقط، وتتيح لسند الوصول إلى الملف الذي ينشئه بنفسه ولا شيء غيره. لا نقرأ ولا نعدّل أي ملف آخر في Google Drive.</li>
+    <li><strong>ما نكتبه:</strong> بيانات تقارير المتجر في ملف واحد، ويتحدّث تلقائيًا أو عند الطلب.</li>
+    <li><strong>حماية الوصول:</strong> نحفظ إذن الوصول بشكل مؤمَّن ولا نشاركه مع أحد.</li>
+    <li><strong>الإلغاء:</strong> يمكنك إيقاف الربط من داخل سند أو من <a href="https://myaccount.google.com/permissions" rel="noopener">صفحة أذونات حساب Google</a>. يتوقف وصولنا فورًا، ويبقى الملف ملكًا لك.</li>
+  </ul>
+  <div class="note" lang="en" dir="ltr">
+    <p>Sanad-POS's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+  </div>
+  <p>التزامًا بذلك: نستخدم بيانات Google لتقديم هذه الميزة فقط؛ لا نبيعها ولا نستخدمها للإعلانات؛ لا ننقلها لأي طرف إلا بقدر ما يلزم لتشغيل الميزة أو التزامًا بالقانون؛ لا يطّلع عليها أحد من فريقنا إلا بموافقتك أو لأغراض الأمان أو الالتزام القانوني؛ ولا نستخدمها لتدريب نماذج ذكاء اصطناعي.</p>
 
-<h2>6. حقوق المستخدم</h2>
-<p>
-يحق لصاحب الحساب طلب الاطلاع على بياناته، أو تصحيحها، أو طلب حذفها، أو إلغاء ربط حساب Google
-في أي وقت، وذلك بالتواصل معنا مباشرة.
-</p>
+  <h2>4. رسائل البريد الإلكتروني</h2>
+  <p>نرسل بريدًا لازمًا لتشغيل الخدمة، مثل تفعيل الحسابات وأكواد التحقق وتنبيهات الاشتراك، وتقارير ونسخًا احتياطية يطلبها صاحب المتجر أو يفعّلها، وردودًا على رسائلك إلينا.</p>
 
-<h2>7. التواصل</h2>
-<p>
-لأي استفسار يخص هذه السياسة أو بياناتك، يمكن التواصل معنا عبر البريد الإلكتروني:
-<br>
-<a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>
-</p>
+  <h2>5. النسخ الاحتياطي والاسترجاع</h2>
+  <p>يستطيع صاحب المتجر تنزيل نسخة احتياطية مشفّرة، أو استلامها بالبريد إن فعّل ذلك. لا يتم الاسترجاع إلا بعد التحقق من هوية صاحب الحساب وتأكيده صراحةً، وهو يستبدل بيانات المتجر بمحتوى النسخة.</p>
+
+  <h2>6. الاستضافة ومزودو الخدمة</h2>
+  <p>نستعين بجهات موثوقة لاستضافة النظام وقاعدة البيانات وتخزين الملفات وحماية الموقع وإرسال البريد. تعالج هذه الجهات البيانات لتقديم خدماتها لنا فقط. تُستضاف البيانات داخل الاتحاد الأوروبي. لا نبيع البيانات ولا نشاركها لأغراض تسويقية.</p>
+
+  <h2>7. التخزين في المتصفح</h2>
+  <p>يحفظ التطبيق على جهازك ما يلزم لعمله، مثل جلسة الدخول وتفضيلاتك وبيانات وضع الأوفلاين إلى أن تُرفع، ولا يستخدمها لتتبعك. لا نستخدم ملفات تعريف ارتباط إعلانية أو تحليلية.</p>
+
+  <h2>8. الأمان</h2>
+  <p>نطبّق إجراءات تقنية وتنظيمية لحماية البيانات، منها تشفير الاتصال والتخزين، وحفظ كلمات المرور بشكل مؤمَّن، وفصل بيانات كل متجر وكل فرع عن غيره، وصلاحيات حسب الدور، وإنهاء الجلسات الخاملة. لا يوجد نظام آمن بنسبة 100%، لكننا نعمل باستمرار على تقليل المخاطر.</p>
+
+  <h2>9. الاحتفاظ والحذف</h2>
+  <ul>
+    <li>تبقى بيانات المتجر طالما الحساب قائم، ولا تُحذف تلقائيًا عند انتهاء الاشتراك.</li>
+    <li>ما يُحذف من داخل النظام يمر بفترة أرشفة قابلة للاسترجاع قبل الحذف النهائي. عند الحذف النهائي لبيانات شخص نمسح بياناته الشخصية، وتبقى السجلات المالية دون بيانات تعرّف به حفاظًا على سلامتها.</li>
+    <li>يمكنك طلب حذف حسابك أو بياناتك، فنحذفها أو نجعلها مجهولة الهوية عدا ما يلزم الاحتفاظ به قانونًا.</li>
+    <li>ملف Google Sheets وأي بريد وصلك خارج تحكمنا بعد إرساله، وتحذفه أنت.</li>
+  </ul>
+
+  <h2>10. الامتثال</h2>
+  <p>تستند معالجتنا إلى قانون حماية البيانات الشخصية المصري رقم 151 لسنة 2020. على صاحب المتجر إبلاغ عملائه بما يسجله عنهم، ونوفر له أدوات تعينه على الامتثال، ومنها تسجيل حوادث الأمان وإشعار المتأثرين بها.</p>
+
+  <h2>11. حقوقك</h2>
+  <p>يحق لك طلب الاطلاع على بياناتك أو تصحيحها أو حذفها، وسحب ربط Google في أي وقت. إذا كنت عميلًا لمتجر يستخدم سند فتواصل أولًا مع المتجر لأنه المتحكم في بياناتك ونحن نساعده في تنفيذ طلبك. وللطلبات المتعلقة بحسابات المتاجر والمستخدمين راسلنا على البريد أدناه.</p>
+
+  <h2>12. الأطفال والتعديلات</h2>
+  <p>الخدمة موجهة للتجار ولا تستهدف الأطفال. قد نحدّث هذه السياسة ونذكر تاريخ آخر تحديث أعلاها، ونبلغ أصحاب الحسابات بالتعديلات الجوهرية.</p>
+
+  <h2>13. التواصل</h2>
+  <p>لأي استفسار عن هذه السياسة أو بياناتك: <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a></p>
+  <p>أو تواصل معنا عبر: <a href="https://wa.me/201119638778" target="_blank" rel="noopener">واتساب</a> · <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a></p>
+</article>
+
+<article class="doc en" lang="en" dir="ltr">
+  <h1>Privacy Policy — Sanad-POS</h1>
+  <p class="updated">Last updated: October 2026</p>
+
+  <p>Sanad is a web-based system for managing sales and inventory for retail shops. This policy explains the types of data we process, why, how we protect it, and how you can exercise your rights. It applies to this website and to the Sanad application.</p>
+
+  <h2>1. Who we are and our role</h2>
+  <p>The service is offered to merchants by subscription. The Sanad team creates shop accounts; there is no self-registration.</p>
+  <ul>
+    <li><strong>Shop and customer data</strong> entered by the shop owner: the owner decides how it is used, and Sanad processes it on the owner's behalf solely to run the service.</li>
+    <li><strong>Shop account and subscription data:</strong> we decide how it is used.</li>
+  </ul>
+
+  <h2>2. Data we process</h2>
+  <ul>
+    <li><strong>Account and subscription data:</strong> shop name, contact details of the owner, and subscription information.</li>
+    <li><strong>User data:</strong> name, email, phone (optional) and role within the shop. Sign-in credentials are stored securely and never as plain text.</li>
+    <li><strong>Operating data entered by the shop:</strong> products, stock, sales, returns, suppliers, expenses and related records.</li>
+    <li><strong>Shop customers' data (optional):</strong> a name and phone number, if the shop records them on an invoice.</li>
+    <li><strong>Files users upload:</strong> such as product images, logos and complaint attachments.</li>
+    <li><strong>Activity logs:</strong> for security and accountability within the account.</li>
+    <li><strong>Messages you send us:</strong> such as complaints and suggestions.</li>
+  </ul>
+  <p>We use no analytics or advertising trackers.</p>
+
+  <h2 id="google">3. Google integration (Google Sheets)</h2>
+  <p>An optional feature that the shop owner turns on personally. It saves a backup copy of the shop's reports to a Google Sheets file inside the owner's own Google account.</p>
+  <ul>
+    <li><strong>Scope requested:</strong> <code>https://www.googleapis.com/auth/drive.file</code> only. It lets Sanad access the file Sanad itself creates and nothing else. We do not read or modify any other file in Google Drive.</li>
+    <li><strong>What we write:</strong> the shop's report data in one file, updated automatically or on request.</li>
+    <li><strong>Protecting access:</strong> we store the access permission securely and share it with no one.</li>
+    <li><strong>Revoking:</strong> you can stop the connection from inside Sanad or from your <a href="https://myaccount.google.com/permissions" rel="noopener">Google Account permissions page</a>. Our access ends immediately, and the file stays yours.</li>
+  </ul>
+  <div class="note">
+    <p>Sanad-POS's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" rel="noopener">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+  </div>
+  <p>In line with that: we use Google data only to provide this feature; we do not sell it or use it for advertising; we do not transfer it to anyone except as needed to operate the feature or to comply with law; our team does not read it unless you consent, or for security or legal compliance; and we do not use it to train AI models.</p>
+
+  <h2>4. Emails</h2>
+  <p>We send email needed to run the service, such as account activation, verification codes and subscription reminders; reports and backups that the shop owner requests or enables; and replies to your messages to us.</p>
+
+  <h2>5. Backup and restore</h2>
+  <p>The shop owner can download an encrypted backup, or receive one by email if they enable it. A restore happens only after the account owner's identity is verified and explicitly confirmed, and it replaces the shop's data with the backup's contents.</p>
+
+  <h2>6. Hosting and service providers</h2>
+  <p>We use trusted providers to host the system and database, store files, protect the site and deliver email. They process data only to provide those services to us. Data is hosted within the European Union. We do not sell data or share it for marketing.</p>
+
+  <h2>7. Browser storage</h2>
+  <p>The app keeps on your device what it needs to work, such as your sign-in session, your preferences, and offline data until it uploads. It does not use this to track you. We do not use advertising or analytics cookies.</p>
+
+  <h2>8. Security</h2>
+  <p>We apply technical and organizational measures to protect data, including encryption in transit and at rest, secure storage of passwords, separation of each shop's and each branch's data from others, role-based permissions, and ending inactive sessions. No system is 100% secure, but we work continuously to reduce risk.</p>
+
+  <h2>9. Retention and deletion</h2>
+  <ul>
+    <li>Shop data is kept while the account exists and is not deleted automatically when a subscription expires.</li>
+    <li>Whatever is deleted inside the system goes through a recoverable archive period before permanent deletion. When a person's data is permanently deleted, we erase their personal details, and financial records remain without identifying data to preserve their integrity.</li>
+    <li>You can ask us to delete your account or data; we delete or anonymize it, except what the law requires us to keep.</li>
+    <li>The Google Sheets file and any email you received are outside our control once sent, and you delete them yourself.</li>
+  </ul>
+
+  <h2>10. Compliance</h2>
+  <p>Our processing is guided by Egypt's Personal Data Protection Law No. 151 of 2020. A shop owner must tell their customers what is recorded about them. We provide tools to help the shop comply, including logging security incidents and notifying those affected.</p>
+
+  <h2>11. Your rights</h2>
+  <p>You may ask to access, correct or delete your data, and withdraw the Google connection at any time. If you are a customer of a shop that uses Sanad, contact that shop first because it decides how your data is used, and we help it carry out your request. For requests about shop accounts and users, write to the address below.</p>
+
+  <h2>12. Children and changes</h2>
+  <p>The service is for merchants and is not aimed at children. We may update this policy, we show the date of the latest update at the top, and we notify account owners of material changes.</p>
+
+  <h2>13. Contact</h2>
+  <p>Questions about this policy or your data: <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a></p>
+  <p>Or reach us on: <a href="https://wa.me/201119638778" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a></p>
+</article>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Service</span></a>
+      <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>
+      <a href="https://wa.me/201119638778" target="_blank" rel="noopener"><span class="ar">واتساب</span><span class="en">WhatsApp</span></a>
+      <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <span>© 2026 Sanad-POS</span>
+  </div>
+</footer>
 
 </body>
 </html>

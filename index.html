@@ -1,84 +1,264 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanad-POS — نظام إدارة نقاط البيع والمخزون</title>
-<meta name="description" content="Sanad-POS is a point-of-sale and inventory management system for retail shops, supporting multi-branch operations, staff roles, and Google Sheets backup.">
-<meta name="google-site-verification" content="mAslJJPmhC9JXXQ7WRaGkBwQIzqg67gdCwm4RnlbITw" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ar="سند (Sanad-POS) — نظام نقاط البيع والمخزون لمتاجر التجزئة" data-en="Sanad-POS — Point of sale and inventory for retail shops">Sanad-POS (سند) — Point of sale and inventory for retail shops | نظام نقاط البيع والمخزون</title>
+<meta name="description"
+      content="Sanad-POS (سند): point of sale, per-branch inventory, reports and backups for retail shops. نظام نقاط بيع ومخزون وتقارير لمتاجر التجزئة بفرع أو عدة فروع."
+      data-ar="سند: نظام ويب لمتاجر التجزئة — نقطة بيع، مخزون لكل فرع، تقارير، ونسخ احتياطي، مع وضع أوفلاين وواجهة عربي/إنجليزي."
+      data-en="Sanad-POS is a web-based point of sale and inventory system for retail shops: per-branch stock, reports, backups, offline selling, and a full Arabic/English interface.">
+<meta name="google-site-verification" content="mAslJJPmhC9JXXQ7WRaGkBwQIzqg67gdCwm4RnlbITw">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Sanad-POS — سند">
+<meta property="og:description" content="Point of sale, inventory and reports for retail shops.">
+<meta property="og:image" content="https://sanad-pos.com/brand/logo-mark.png">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="brand/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <style>
-  body {
-    font-family: -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-    background: #F0EDDE;
-    color: #09453D;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  h1 {
-    color: #960D41;
-    border-bottom: 3px solid #960D41;
-    padding-bottom: 12px;
-  }
-  h2 {
-    color: #09453D;
-    margin-top: 32px;
-  }
-  a { color: #960D41; }
-  .tagline {
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 32px;
-  }
-  ul { padding-right: 20px; }
-  .links {
-    margin-top: 40px;
-    padding-top: 20px;
-    border-top: 1px solid #C8C1AF;
-  }
-  .links a {
-    display: inline-block;
-    margin-left: 24px;
-    font-weight: bold;
-  }
+:root{--green:#09453D;--burg:#960D41;--cream:#F0EDDE;--taupe:#C8C1AF;--paper:#F8F6EC;--muted:#4a5f5a}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--green);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",system-ui,-apple-system,Arial,sans-serif;font-size:17px;line-height:1.85}
+html[data-lang="ar"] .en{display:none}
+html[data-lang="en"] .ar{display:none}
+html[lang="en"] h1,html[lang="en"] h2{font-family:Georgia,"Times New Roman",serif}
+a{color:var(--burg);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--burg);outline-offset:3px;border-radius:4px}
+img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+.top{border-bottom:1px solid var(--taupe);background:var(--paper)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{height:34px;width:auto}
+.brand .word{height:26px;width:auto}
+.nav{display:flex;align-items:center;gap:20px;font-size:15px}
+.nav a{text-decoration:none;font-weight:600}
+.nav a:hover{text-decoration:underline}
+.lang-btn{font:inherit;font-size:15px;color:var(--burg);background:transparent;border:1.5px solid var(--burg);border-radius:999px;padding:3px 16px;cursor:pointer}
+.lang-btn:hover{background:var(--burg);color:#fff}
+
+/* legal documents */
+.doc{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+.doc h1{font-size:2rem;line-height:1.35;color:var(--burg);margin:0 0 6px}
+.doc .updated{color:var(--muted);font-size:.92rem;margin:0 0 24px}
+.doc h2{font-size:1.25rem;line-height:1.5;margin:40px 0 10px;padding-top:18px;border-top:1px solid var(--taupe)}
+.doc h3{font-size:1.02rem;margin:22px 0 6px;color:var(--burg)}
+.doc p,.doc ul,.doc ol{margin:0 0 14px}
+.doc ul,.doc ol{padding-inline-start:1.4em}
+.doc li{margin-bottom:6px}
+code{background:rgba(9,69,61,.08);padding:1px 6px;border-radius:4px;font-size:.9em;direction:ltr;unicode-bidi:isolate}
+.toc{background:var(--paper);border:1px solid var(--taupe);border-radius:8px;padding:14px 22px;margin:0 0 8px;font-size:.95rem}
+.toc ol{margin:0;columns:2;column-gap:32px}
+.note{background:var(--paper);border-inline-start:4px solid var(--burg);padding:14px 18px;margin:18px 0;border-radius:4px}
+.note p{margin:0}
+.tbl-wrap{overflow-x:auto;margin:0 0 14px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:start;padding:10px 12px;border-bottom:1px solid var(--taupe);vertical-align:top}
+th{color:var(--burg);font-weight:700}
+
+/* home */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding:64px 0 48px}
+.hero h1{font-size:2.5rem;line-height:1.35;margin:0 0 16px;color:var(--green)}
+.hero p{margin:0 0 14px;max-width:34em;color:var(--muted);font-size:1.08rem}
+.hero .small{font-size:.95rem}
+.hero-art{display:flex;justify-content:center}
+.hero-art img{width:min(100%,250px);height:auto}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.btn{display:inline-block;padding:11px 28px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid transparent}
+.btn.primary{background:var(--burg);color:#fff}
+.btn.primary:hover{background:#7a0a34}
+.btn.ghost{border-color:var(--green);color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:var(--cream)}
+.section{padding:40px 0}
+.section>h2{font-size:1.6rem;margin:0 0 8px}
+.section>.lead{margin:0 0 24px;color:var(--muted);max-width:40em}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.feat>div{border-top:1px solid var(--taupe);padding:18px 0 14px}
+.feat h3{margin:0 0 4px;font-size:1.08rem}
+.feat p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.8}
+.callout{background:var(--paper);border:1px solid var(--taupe);border-radius:8px;padding:26px 28px;max-width:760px}
+.callout h2{margin:0 0 8px;font-size:1.3rem}
+.callout p{margin:0 0 10px}
+.callout p:last-child{margin:0}
+
+.foot{border-top:1px solid var(--taupe);padding:28px 0 44px;color:var(--muted);font-size:.95rem;background:var(--paper)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+
+@media(max-width:720px){
+  .hero{grid-template-columns:1fr;gap:24px;padding-top:36px}
+  .hero-art{order:-1}.hero-art img{width:110px}
+  .hero h1{font-size:1.9rem}
+  .feat{grid-template-columns:1fr}
+  .toc ol{columns:1}
+  .doc h1{font-size:1.65rem}
+  .nav a.hide-sm{display:none}
+}
+@media(prefers-reduced-motion:no-preference){.btn,.lang-btn{transition:background .15s,color .15s}}
 </style>
+<script>
+(function () {
+  var d = document.documentElement;
+  var KEY = 'sanad_site_lang';
+  function pick() {
+    var l = 'ar';
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      var s = localStorage.getItem(KEY);
+      if (q === 'ar' || q === 'en') l = q;
+      else if (s === 'ar' || s === 'en') l = s;
+      else {
+        var n = (navigator.language || 'ar').toLowerCase();
+        l = n.indexOf('en') === 0 ? 'en' : 'ar';
+      }
+    } catch (e) {}
+    return l;
+  }
+  function apply(l) {
+    d.setAttribute('lang', l);
+    d.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    d.setAttribute('data-lang', l);
+    var t = document.querySelector('title');
+    if (t && t.getAttribute('data-' + l)) document.title = t.getAttribute('data-' + l);
+    var m = document.querySelector('meta[name="description"]');
+    if (m && m.getAttribute('data-' + l)) m.setAttribute('content', m.getAttribute('data-' + l));
+    var b = document.getElementById('lang-btn');
+    if (b) {
+      b.textContent = l === 'ar' ? 'English' : 'العربية';
+      b.setAttribute('lang', l === 'ar' ? 'en' : 'ar');
+      b.setAttribute('aria-label', l === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+    }
+  }
+  var cur = pick();
+  apply(cur);
+  document.addEventListener('DOMContentLoaded', function () {
+    apply(cur);
+    var b = document.getElementById('lang-btn');
+    if (b) b.addEventListener('click', function () {
+      cur = cur === 'ar' ? 'en' : 'ar';
+      try { localStorage.setItem(KEY, cur); } catch (e) {}
+      apply(cur);
+    });
+  });
+})();
+</script>
+<noscript><style>html[data-lang] .ar,html[data-lang] .en{display:revert!important}#lang-btn{display:none}</style></noscript>
 </head>
 <body>
 
-<h1>Sanad-POS</h1>
-<p class="tagline">نظام إدارة نقاط البيع والمخزون لمتاجر التجزئة | Point-of-sale &amp; inventory management for retail shops</p>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Sanad-POS">
+      <img class="mark" src="brand/logo-mark.png" alt="" width="32" height="34">
+      <img class="word ar" src="brand/logo-ar.png" alt="سند" width="60" height="26">
+      <img class="word en" src="brand/logo-en.png" alt="Sanad" width="79" height="26">
+    </a>
+    <nav class="nav">
+      <a class="hide-sm" href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <a class="hide-sm" href="terms.html"><span class="ar">الشروط</span><span class="en">Terms</span></a>
+      <button id="lang-btn" class="lang-btn" type="button" aria-label="Switch to English">English</button>
+    </nav>
+  </div>
+</header>
 
-<p>
-<strong>Sanad-POS (سند)</strong> هو نظام ويب متكامل لإدارة نقاط البيع، المخزون، والفروع المتعددة
-لمتاجر التجزئة. يساعد أصحاب المحلات على إدارة عمليات البيع اليومية، متابعة المخزون في الوقت
-الفعلي، وإدارة فرق العمل بصلاحيات مختلفة (صاحب المحل، مدير الفرع، الكاشير).
-</p>
+<main>
+<div class="wrap">
 
-<h2>الميزات الأساسية</h2>
-<ul>
-  <li>نقطة بيع (POS) سريعة تدعم الباركود، الخصومات، والعروض التلقائية.</li>
-  <li>إدارة مخزون منفصلة لكل فرع، مع تتبّع دقيق لحركة البضاعة.</li>
-  <li>إدارة فروع متعددة تحت حساب واحد، بعزل كامل بين بيانات كل فرع.</li>
-  <li>تقارير وداشبورد لمتابعة المبيعات والأداء.</li>
-  <li>نسخ احتياطي اختياري لبيانات المتجر، بما في ذلك مزامنة مع Google Sheets الخاص بصاحب الحساب.</li>
-</ul>
+  <section class="hero">
+    <div>
+      <div class="ar" lang="ar">
+        <h1>نقطة بيع ومخزون وتقارير لمحلك، بفرع واحد أو عدة فروع</h1>
+        <p>سند نظام ويب لمتاجر التجزئة. تبيع، وتتابع المخزون لكل فرع، وتشوف حسابات اليوم من أي جهاز.</p>
+      </div>
+      <div class="en" lang="en">
+        <h1>Point of sale, inventory and reports for your shop — one branch or many</h1>
+        <p>Sanad is a web-based system for retail shops. Sell, track stock branch by branch, and check the day's numbers from any device.</p>
+      </div>
+      <div class="cta">
+        <a class="btn primary" href="#contact"><span class="ar">تواصل معنا</span><span class="en">Contact us</span></a>
+      </div>
+      <p class="small ar" lang="ar">الحسابات يُنشئها فريق سند بعد الاتفاق مع صاحب المتجر، ولا يوجد تسجيل ذاتي. للاشتراك أو التجربة أو أي استفسار، تواصل معنا بالطريقة الأنسب لك من وسائل التواصل أسفل الصفحة.</p>
+      <p class="small en" lang="en">Accounts are created by the Sanad team after an agreement with the shop owner; there is no self-registration. To subscribe, try Sanad or ask anything, reach us whichever way suits you best — the contact options are at the bottom of the page.</p>
+    </div>
+    <div class="hero-art">
+      <img src="brand/logo-mark.png" alt="" width="250" height="269">
+    </div>
+  </section>
 
-<h2>About / بالإنجليزية</h2>
-<p>
-Sanad-POS is a multi-branch, multi-role point-of-sale and inventory management platform built
-for retail businesses. It provides real-time inventory tracking, staff permission management,
-sales reporting, and optional cloud backup features — including an opt-in Google Sheets sync
-that lets shop owners keep a backup copy of their sales and inventory data in a spreadsheet
-they own and control.
-</p>
+  <section class="section" aria-labelledby="feat-h">
+    <h2 id="feat-h"><span class="ar">ماذا يقدّم سند</span><span class="en">What Sanad does</span></h2>
+    <div class="feat ar" lang="ar">
+      <div><h3>نقطة بيع سريعة</h3><p>بيع بالباركود، مع خصومات وعروض تلقائية، وطباعة إيصال للعميل.</p></div>
+      <div><h3>استمرار البيع بدون إنترنت</h3><p>لا يتوقف المحل عند انقطاع الإنترنت، وتُرفع الفواتير تلقائيًا عند عودته.</p></div>
+      <div><h3>مخزون لكل فرع</h3><p>متابعة المخزون والأصناف لكل فرع على حدة، مع تنبيهات النقص.</p></div>
+      <div><h3>الموردون</h3><p>تسجيل البضاعة الواردة ومتابعة المستحق لكل مورد.</p></div>
+      <div><h3>الفواتير والمرتجعات</h3><p>سجل فواتير سهل البحث، ومرتجعات تُحدّث المخزون والحسابات.</p></div>
+      <div><h3>مصروفات وحسابات اليوم</h3><p>سجّل المصروفات وتابع حسابات اليوم من شاشة واحدة.</p></div>
+      <div><h3>تقارير</h3><p>تقارير للمبيعات والمخزون وأداء الفريق، قابلة للتصدير.</p></div>
+      <div><h3>فروع وصلاحيات</h3><p>أدر عدة فروع وفريق عمل، وحدد ما يراه كل شخص.</p></div>
+      <div><h3>نسخ احتياطي</h3><p>حافظ على نسخة احتياطية من بياناتك، مع خيار الربط مع Google Sheets.</p></div>
+      <div><h3>عربي وإنجليزي</h3><p>واجهة كاملة باللغتين.</p></div>
+    </div>
+    <div class="feat en" lang="en">
+      <div><h3>Fast point of sale</h3><p>Sell by barcode, with discounts and automatic offers, and print a receipt for the customer.</p></div>
+      <div><h3>Keep selling offline</h3><p>The shop doesn't stop when the internet drops, and invoices upload automatically when it returns.</p></div>
+      <div><h3>Stock per branch</h3><p>Follow stock and items branch by branch, with low-stock alerts.</p></div>
+      <div><h3>Suppliers</h3><p>Record incoming goods and track what you owe each supplier.</p></div>
+      <div><h3>Invoices and returns</h3><p>A searchable invoice history, and returns that keep stock and accounts up to date.</p></div>
+      <div><h3>Expenses and daily accounts</h3><p>Log expenses and follow the day's accounts from one screen.</p></div>
+      <div><h3>Reports</h3><p>Reports on sales, stock and team performance, ready to export.</p></div>
+      <div><h3>Branches and permissions</h3><p>Run several branches and a team, and decide what each person can see.</p></div>
+      <div><h3>Backups</h3><p>Keep a backup copy of your data, with an optional Google Sheets connection.</p></div>
+      <div><h3>Arabic and English</h3><p>A complete interface in both languages.</p></div>
+    </div>
+  </section>
 
-<div class="links">
-  <a href="privacy.html">سياسة الخصوصية / Privacy Policy</a>
-  <a href="terms.html">شروط الاستخدام / Terms of Service</a>
+  <section class="section" aria-labelledby="g-h">
+    <div class="callout">
+      <div class="ar" lang="ar">
+        <h2 id="g-h">الربط مع Google (اختياري)</h2>
+        <p>يمكن لصاحب المتجر تفعيل مزامنة نسخة احتياطية من تقارير متجره إلى ملف Google Sheets في حسابه الشخصي. لا يصل سند إلا إلى الملف الذي ينشئه بنفسه، ولا يقرأ أي ملف آخر في Google Drive. يمكن إلغاء الربط في أي وقت.</p>
+        <p>التفاصيل الكاملة في <a href="privacy.html">سياسة الخصوصية</a>.</p>
+      </div>
+      <div class="en" lang="en">
+        <h2>Google integration (optional)</h2>
+        <p>A shop owner can turn on a sync that writes a backup copy of the shop's reports to a Google Sheets file in the owner's own Google account. Sanad can reach only the file it creates itself and never reads any other file in Google Drive. The connection can be revoked at any time.</p>
+        <p>Full details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact" aria-labelledby="c-h">
+    <h2 id="c-h"><span class="ar">تواصل معنا</span><span class="en">Get in touch</span></h2>
+    <p class="lead ar" lang="ar">للاشتراك أو التجربة أو أي استفسار، تواصل معنا بأي وسيلة تناسبك.</p>
+    <p class="lead en" lang="en">To subscribe, try Sanad, or ask anything, reach us whichever way suits you.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://wa.me/201119638778" target="_blank" rel="noopener"><span class="ar">واتساب</span><span class="en">WhatsApp</span></a>
+      <a class="btn ghost" href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>
+      <a class="btn ghost" href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a>
+      <a class="btn ghost" href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </section>
+
 </div>
+</main>
 
-<p>للتواصل / Contact: <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a></p>
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="terms.html"><span class="ar">شروط الاستخدام</span><span class="en">Terms of Service</span></a>
+      <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>
+      <a href="https://wa.me/201119638778" target="_blank" rel="noopener"><span class="ar">واتساب</span><span class="en">WhatsApp</span></a>
+      <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <span>© 2026 Sanad-POS</span>
+  </div>
+</footer>
 
 </body>
 </html>

@@ -1,91 +1,349 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-lang="ar">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>شروط الاستخدام — سند (Sanad)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title data-ar="شروط الاستخدام — سند (Sanad-POS)" data-en="Terms of Service — Sanad-POS">Terms of Service | شروط الاستخدام — Sanad-POS</title>
+<meta name="description"
+      content="Sanad-POS Terms of Service: accounts, subscription, acceptable use, data ownership, backups, liability. شروط استخدام سند."
+      data-ar="شروط استخدام سند: الحسابات، الاشتراك، الاستخدام المقبول، ملكية البيانات، النسخ الاحتياطي، وحدود المسؤولية."
+      data-en="Sanad-POS Terms of Service: accounts, subscription, acceptable use, data ownership, backups and liability.">
+<link rel="icon" href="brand/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="brand/icon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="brand/apple-touch-icon.png">
 <style>
-  body {
-    font-family: -apple-system, "Segoe UI", Tahoma, Arial, sans-serif;
-    background: #F0EDDE;
-    color: #09453D;
-    line-height: 1.8;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 20px;
-  }
-  h1 {
-    color: #960D41;
-    border-bottom: 3px solid #960D41;
-    padding-bottom: 12px;
-  }
-  h2 {
-    color: #09453D;
-    margin-top: 32px;
-  }
-  a { color: #960D41; }
-  .updated {
-    color: #666;
-    font-size: 0.9em;
-    margin-bottom: 32px;
-  }
-  ul { padding-right: 20px; }
+:root{--green:#09453D;--burg:#960D41;--cream:#F0EDDE;--taupe:#C8C1AF;--paper:#F8F6EC;--muted:#4a5f5a}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--cream);color:var(--green);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic","Noto Sans Arabic",system-ui,-apple-system,Arial,sans-serif;font-size:17px;line-height:1.85}
+html[data-lang="ar"] .en{display:none}
+html[data-lang="en"] .ar{display:none}
+html[lang="en"] h1,html[lang="en"] h2{font-family:Georgia,"Times New Roman",serif}
+a{color:var(--burg);text-underline-offset:3px}
+a:focus-visible,button:focus-visible{outline:3px solid var(--burg);outline-offset:3px;border-radius:4px}
+img{max-width:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+.top{border-bottom:1px solid var(--taupe);background:var(--paper)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{height:34px;width:auto}
+.brand .word{height:26px;width:auto}
+.nav{display:flex;align-items:center;gap:20px;font-size:15px}
+.nav a{text-decoration:none;font-weight:600}
+.nav a:hover{text-decoration:underline}
+.lang-btn{font:inherit;font-size:15px;color:var(--burg);background:transparent;border:1.5px solid var(--burg);border-radius:999px;padding:3px 16px;cursor:pointer}
+.lang-btn:hover{background:var(--burg);color:#fff}
+
+/* legal documents */
+.doc{max-width:760px;margin:0 auto;padding:48px 24px 72px}
+.doc h1{font-size:2rem;line-height:1.35;color:var(--burg);margin:0 0 6px}
+.doc .updated{color:var(--muted);font-size:.92rem;margin:0 0 24px}
+.doc h2{font-size:1.25rem;line-height:1.5;margin:40px 0 10px;padding-top:18px;border-top:1px solid var(--taupe)}
+.doc h3{font-size:1.02rem;margin:22px 0 6px;color:var(--burg)}
+.doc p,.doc ul,.doc ol{margin:0 0 14px}
+.doc ul,.doc ol{padding-inline-start:1.4em}
+.doc li{margin-bottom:6px}
+code{background:rgba(9,69,61,.08);padding:1px 6px;border-radius:4px;font-size:.9em;direction:ltr;unicode-bidi:isolate}
+.toc{background:var(--paper);border:1px solid var(--taupe);border-radius:8px;padding:14px 22px;margin:0 0 8px;font-size:.95rem}
+.toc ol{margin:0;columns:2;column-gap:32px}
+.note{background:var(--paper);border-inline-start:4px solid var(--burg);padding:14px 18px;margin:18px 0;border-radius:4px}
+.note p{margin:0}
+.tbl-wrap{overflow-x:auto;margin:0 0 14px}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:start;padding:10px 12px;border-bottom:1px solid var(--taupe);vertical-align:top}
+th{color:var(--burg);font-weight:700}
+
+/* home */
+.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center;padding:64px 0 48px}
+.hero h1{font-size:2.5rem;line-height:1.35;margin:0 0 16px;color:var(--green)}
+.hero p{margin:0 0 14px;max-width:34em;color:var(--muted);font-size:1.08rem}
+.hero .small{font-size:.95rem}
+.hero-art{display:flex;justify-content:center}
+.hero-art img{width:min(100%,250px);height:auto}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 16px}
+.btn{display:inline-block;padding:11px 28px;border-radius:999px;font-weight:700;text-decoration:none;border:1.5px solid transparent}
+.btn.primary{background:var(--burg);color:#fff}
+.btn.primary:hover{background:#7a0a34}
+.btn.ghost{border-color:var(--green);color:var(--green)}
+.btn.ghost:hover{background:var(--green);color:var(--cream)}
+.section{padding:40px 0}
+.section>h2{font-size:1.6rem;margin:0 0 8px}
+.section>.lead{margin:0 0 24px;color:var(--muted);max-width:40em}
+.feat{display:grid;grid-template-columns:repeat(2,1fr);gap:0 56px}
+.feat>div{border-top:1px solid var(--taupe);padding:18px 0 14px}
+.feat h3{margin:0 0 4px;font-size:1.08rem}
+.feat p{margin:0;color:var(--muted);font-size:.98rem;line-height:1.8}
+.callout{background:var(--paper);border:1px solid var(--taupe);border-radius:8px;padding:26px 28px;max-width:760px}
+.callout h2{margin:0 0 8px;font-size:1.3rem}
+.callout p{margin:0 0 10px}
+.callout p:last-child{margin:0}
+
+.foot{border-top:1px solid var(--taupe);padding:28px 0 44px;color:var(--muted);font-size:.95rem;background:var(--paper)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between}
+.foot nav{display:flex;flex-wrap:wrap;gap:8px 22px}
+
+@media(max-width:720px){
+  .hero{grid-template-columns:1fr;gap:24px;padding-top:36px}
+  .hero-art{order:-1}.hero-art img{width:110px}
+  .hero h1{font-size:1.9rem}
+  .feat{grid-template-columns:1fr}
+  .toc ol{columns:1}
+  .doc h1{font-size:1.65rem}
+  .nav a.hide-sm{display:none}
+}
+@media(prefers-reduced-motion:no-preference){.btn,.lang-btn{transition:background .15s,color .15s}}
 </style>
+<script>
+(function () {
+  var d = document.documentElement;
+  var KEY = 'sanad_site_lang';
+  function pick() {
+    var l = 'ar';
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      var s = localStorage.getItem(KEY);
+      if (q === 'ar' || q === 'en') l = q;
+      else if (s === 'ar' || s === 'en') l = s;
+      else {
+        var n = (navigator.language || 'ar').toLowerCase();
+        l = n.indexOf('en') === 0 ? 'en' : 'ar';
+      }
+    } catch (e) {}
+    return l;
+  }
+  function apply(l) {
+    d.setAttribute('lang', l);
+    d.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    d.setAttribute('data-lang', l);
+    var t = document.querySelector('title');
+    if (t && t.getAttribute('data-' + l)) document.title = t.getAttribute('data-' + l);
+    var m = document.querySelector('meta[name="description"]');
+    if (m && m.getAttribute('data-' + l)) m.setAttribute('content', m.getAttribute('data-' + l));
+    var b = document.getElementById('lang-btn');
+    if (b) {
+      b.textContent = l === 'ar' ? 'English' : 'العربية';
+      b.setAttribute('lang', l === 'ar' ? 'en' : 'ar');
+      b.setAttribute('aria-label', l === 'ar' ? 'Switch to English' : 'التبديل إلى العربية');
+    }
+  }
+  var cur = pick();
+  apply(cur);
+  document.addEventListener('DOMContentLoaded', function () {
+    apply(cur);
+    var b = document.getElementById('lang-btn');
+    if (b) b.addEventListener('click', function () {
+      cur = cur === 'ar' ? 'en' : 'ar';
+      try { localStorage.setItem(KEY, cur); } catch (e) {}
+      apply(cur);
+    });
+  });
+})();
+</script>
+<noscript><style>html[data-lang] .ar,html[data-lang] .en{display:revert!important}#lang-btn{display:none}</style></noscript>
 </head>
 <body>
 
-<h1>شروط الاستخدام — سند (Sanad)</h1>
-<p class="updated">آخر تحديث: سبتمبر 2026</p>
+<header class="top">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Sanad-POS">
+      <img class="mark" src="brand/logo-mark.png" alt="" width="32" height="34">
+      <img class="word ar" src="brand/logo-ar.png" alt="سند" width="60" height="26">
+      <img class="word en" src="brand/logo-en.png" alt="Sanad" width="79" height="26">
+    </a>
+    <nav class="nav">
+      <a class="hide-sm" href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a class="hide-sm" href="privacy.html"><span class="ar">الخصوصية</span><span class="en">Privacy</span></a>
+      <button id="lang-btn" class="lang-btn" type="button" aria-label="Switch to English">English</button>
+    </nav>
+  </div>
+</header>
 
-<p>
-باستخدامك لتطبيق سند (Sanad)، فإنك توافق على الشروط التالية. يُرجى قراءتها بعناية قبل استخدام الخدمة.
-</p>
+<main>
 
-<h2>1. طبيعة الخدمة</h2>
-<p>
-سند هو تطبيق ويب لإدارة نقاط البيع (POS) والمخزون والفروع المتعددة لمتاجر التجزئة. يتم إنشاء
-الحسابات حصريًا من قِبل فريق سند بعد اتفاق مباشر مع صاحب المتجر — لا يوجد تسجيل ذاتي مفتوح للعامة.
-</p>
+<article class="doc ar" lang="ar" dir="rtl">
+  <h1>شروط الاستخدام — سند (Sanad-POS)</h1>
+  <p class="updated">آخر تحديث: أكتوبر 2026</p>
+  <p>باستخدامك سند فإنك توافق على هذه الشروط. اقرأها مع <a href="privacy.html">سياسة الخصوصية</a> قبل الاستخدام.</p>
 
-<h2>2. الحسابات والصلاحيات</h2>
-<ul>
-  <li>يلتزم كل مستخدم بالحفاظ على سرية بيانات دخوله (البريد الإلكتروني، كلمة المرور، وأي رمز PIN خاص به).</li>
-  <li>يتحمل صاحب الحساب (Master Owner) مسؤولية الصلاحيات التي يمنحها لموظفيه (مديري الفروع والكاشيرز) داخل النظام.</li>
-  <li>يحق لفريق سند تعطيل أي حساب يُستخدم بشكل يخالف هذه الشروط أو بشكل يهدد أمان النظام أو المستخدمين الآخرين.</li>
-</ul>
+  <h2>1. طبيعة الخدمة</h2>
+  <p>سند تطبيق ويب لإدارة نقاط البيع والمخزون والفروع لمتاجر التجزئة، يُقدَّم باشتراك. يُنشئ فريق سند حساب كل متجر بعد اتفاق مباشر مع صاحبه، ولا يوجد تسجيل ذاتي.</p>
 
-<h2>3. الاشتراك</h2>
-<ul>
-  <li>الخدمة تعمل بنظام اشتراك مدفوع مسبقًا، بمدة وحدود (عدد الفروع، عدد حسابات الكاشير) يحددها الاتفاق بين صاحب المتجر وفريق سند.</li>
-  <li>عند انتهاء الاشتراك، يُمنع تسجيل الدخول الجديد، لكن البيانات المخزنة لا تُحذف تلقائيًا.</li>
-</ul>
+  <h2>2. الحسابات والصلاحيات</h2>
+  <ul>
+    <li>كل حساب لشخص واحد. حافظ على سرية بريدك وكلمة المرور والـPIN، ولا تشاركها.</li>
+    <li>صاحب المتجر مسؤول عن الموظفين الذين يضيفهم وعن الصلاحيات التي يمنحها لهم، وعن تعطيل حساب أي موظف يترك العمل.</li>
+    <li>أنت مسؤول عن كل ما يحدث من خلال حسابك حتى تبلغنا بأي استخدام غير مصرّح به.</li>
+  </ul>
 
-<h2>4. الربط مع خدمات خارجية (Google Sheets)</h2>
-<p>
-عند تفعيل ميزة المزامنة مع Google Sheets، يمنح المستخدم صلاحية محدودة لكتابة نسخة احتياطية
-من بياناته في ملف Google Sheets خاص به. يمكن إلغاء هذا الربط في أي وقت من إعدادات الحساب.
-سند غير مسؤول عن أي تغييرات أو انقطاع في خدمة Google نفسها.
-</p>
+  <h2>3. الاشتراك</h2>
+  <ul>
+    <li>الاشتراك مدفوع مسبقًا لمدة وبحدود (مثل عدد الفروع والمستخدمين) يتفق عليها صاحب المتجر مع فريق سند.</li>
+    <li>عند انتهاء الاشتراك يُمنع تسجيل الدخول لكل مستخدمي المتجر، وتتوقف الخدمات الدورية إلى أن يُجدَّد الاشتراك. لا تُحذف البيانات بسبب انتهاء الاشتراك.</li>
+    <li>للتجديد أو تعديل الحدود راسل <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>.</li>
+  </ul>
 
-<h2>5. المسؤولية</h2>
-<ul>
-  <li>يُقدَّم النظام "كما هو"، مع بذل أقصى جهد لضمان استمرارية الخدمة ودقة البيانات.</li>
-  <li>لا يتحمل فريق سند مسؤولية أي خسارة تجارية ناتجة عن انقطاع مؤقت في الخدمة أو خطأ في إدخال البيانات من قِبل المستخدم.</li>
-  <li>يلتزم المستخدم باستخدام النظام وفق القوانين المعمول بها في نطاق عمله.</li>
-</ul>
+  <h2>4. الاستخدام المقبول</h2>
+  <p>تلتزم باستخدام النظام وفق القانون، وبعدم:</p>
+  <ul>
+    <li>محاولة الوصول إلى بيانات متجر أو فرع آخر، أو تجاوز الصلاحيات أو إجراءات الأمان.</li>
+    <li>اختبار اختراق النظام أو تحميله بطلبات آلية مفرطة دون إذن كتابي منا.</li>
+    <li>رفع محتوى مخالف للقانون أو ينتهك حقوق الغير (صور المنتجات، الشعارات، مرفقات الشكاوى).</li>
+    <li>إعادة بيع الخدمة أو إتاحتها لمتجر آخر غير المتفق عليه.</li>
+  </ul>
 
-<h2>6. التعديلات على الشروط</h2>
-<p>
-قد تُحدَّث هذه الشروط من وقت لآخر. سيتم إعلام أصحاب الحسابات بأي تعديل جوهري عبر البريد الإلكتروني
-المسجل أو داخل النظام نفسه.
-</p>
+  <h2>5. بيانات المتجر ومسؤوليته</h2>
+  <ul>
+    <li>تبقى بيانات متجرك ملكًا لك. تمنحنا ترخيصًا محدودًا لاستضافتها ومعالجتها بالقدر اللازم لتشغيل الخدمة فقط.</li>
+    <li>أنت مسؤول عن صحة ما تدخله، وعن إبلاغ عملائك بما تسجله عنهم من اسم ورقم هاتف وعن أساسه القانوني.</li>
+    <li>سند لا يحل محل التزاماتك المحاسبية والضريبية. الإيصالات التي يصدرها النظام للاستخدام التشغيلي.</li>
+  </ul>
 
-<h2>7. التواصل</h2>
-<p>
-لأي استفسار يخص هذه الشروط، يمكن التواصل معنا عبر البريد الإلكتروني:
-<br>
-<a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>
-</p>
+  <h2>6. النسخ الاحتياطي والاسترجاع</h2>
+  <ul>
+    <li>أنت مسؤول عن حفظ كلمات مرور النسخ الاحتياطية. إذا فُقدت فلا يمكننا فك تشفير النسخ.</li>
+    <li>الاسترجاع يستبدل بيانات المتجر التشغيلية بمحتوى النسخة، فأي عملية بعد تاريخ النسخة تُفقد. راجع شاشة المعاينة قبل التأكيد.</li>
+    <li>ننصحك بالاحتفاظ بنسخ دورية خارج النظام. لا نضمن استرجاع بيانات فُقدت بسبب إجراء نفّذه مستخدمو المتجر.</li>
+  </ul>
+
+  <h2>7. وضع الأوفلاين والأجهزة</h2>
+  <ul>
+    <li>الفواتير في وضع الأوفلاين تُحفظ على الجهاز إلى أن تُرفع. مسح بيانات المتصفح أو تلف الجهاز قبل الرفع قد يفقدها، فاتصل بالإنترنت لتتم المزامنة في أقرب وقت.</li>
+    <li>الطباعة تعتمد على توافق جهازك ومتصفحك وطابعتك، ولا نضمن التوافق مع كل الطابعات.</li>
+  </ul>
+
+  <h2>8. خدمات الأطراف الثالثة</h2>
+  <p>تعتمد بعض الميزات على جهات خارجية (مثل Google عند تفعيل المزامنة). تخضع لشروطها وسياساتها، ولسنا مسؤولين عن انقطاعها أو تغييرها. تفاصيل ذلك في <a href="privacy.html">سياسة الخصوصية</a>.</p>
+
+  <h2>9. التعليق والإنهاء</h2>
+  <ul>
+    <li>يحق لنا تعليق أي حساب أو أرشفته عند مخالفة هذه الشروط، أو تهديد أمان النظام أو مستخدمين آخرين، أو عدم تجديد الاشتراك. التعليق يوقف دخول كل مستخدمي المتجر فورًا.</li>
+    <li>يمكنك طلب إنهاء حسابك في أي وقت. بياناتك لا تُحذف تلقائيًا؛ اطلب حذفها صراحةً كما في سياسة الخصوصية.</li>
+  </ul>
+
+  <h2>10. التوافر والتغييرات</h2>
+  <p>نبذل جهدًا معقولًا لاستمرار الخدمة ودقة البيانات، وقد تتوقف الخدمة لفترات للصيانة أو لأسباب خارجة عن إرادتنا. قد نضيف ميزات أو نعدّلها أو نوقفها مع الحرص على عدم الإضرار ببياناتك.</p>
+
+  <h2>11. الملكية الفكرية</h2>
+  <p>اسم «سند» وشعاره وبرمجيات النظام ملك لفريق سند. لا يجوز نسخ النظام أو هندسته عكسيًا أو إعادة توزيعه.</p>
+
+  <h2>12. إخلاء المسؤولية وحدودها</h2>
+  <ul>
+    <li>تُقدَّم الخدمة «كما هي».</li>
+    <li>في حدود ما يسمح به القانون، لا نتحمل خسائر غير مباشرة أو أرباحًا فائتة، ولا خسارة ناتجة عن انقطاع الإنترنت أو أعطال الأطراف الثالثة أو أخطاء إدخال المستخدم.</li>
+    <li>في حدود ما يسمح به القانون، لا تتجاوز مسؤوليتنا الإجمالية قيمة الاشتراك المدفوع عن الفترة الجارية.</li>
+  </ul>
+
+  <h2>13. القانون الواجب التطبيق</h2>
+  <p>تخضع هذه الشروط للقانون المصري، وتختص المحاكم المصرية المختصة بأي نزاع ينشأ عنها.</p>
+
+  <h2>14. التعديلات</h2>
+  <p>قد نحدّث هذه الشروط، ونذكر تاريخ آخر تحديث أعلى الصفحة، ونبلغ أصحاب الحسابات بالتعديلات الجوهرية عبر البريد أو داخل النظام. استمرارك في الاستخدام بعدها يعني موافقتك.</p>
+
+  <h2>15. التواصل</h2>
+  <p><a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a></p>
+  <p>أو تواصل معنا عبر: <a href="https://wa.me/201119638778" target="_blank" rel="noopener">واتساب</a> · <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a></p>
+</article>
+
+<article class="doc en" lang="en" dir="ltr">
+  <h1>Terms of Service — Sanad-POS</h1>
+  <p class="updated">Last updated: October 2026</p>
+  <p>By using Sanad you agree to these terms. Please read them together with the <a href="privacy.html">Privacy Policy</a> before you use the service.</p>
+
+  <h2>1. The service</h2>
+  <p>Sanad is a web application for managing point of sale, inventory and branches for retail shops, offered by subscription. The Sanad team creates each shop's account after a direct agreement with its owner; there is no self-registration.</p>
+
+  <h2>2. Accounts and permissions</h2>
+  <ul>
+    <li>Each account belongs to one person. Keep your email, password and PIN confidential and do not share them.</li>
+    <li>The shop owner is responsible for the staff they add, the permissions they grant, and deactivating anyone who leaves.</li>
+    <li>You are responsible for everything done through your account until you tell us about unauthorized use.</li>
+  </ul>
+
+  <h2>3. Subscription</h2>
+  <ul>
+    <li>The subscription is prepaid for a period and within limits (such as the number of branches and users) agreed between the shop owner and the Sanad team.</li>
+    <li>When a subscription expires, sign-in is blocked for all of the shop's users, and scheduled services pause until it is renewed. Data is not deleted because a subscription expired.</li>
+    <li>To renew or change limits, write to <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>.</li>
+  </ul>
+
+  <h2>4. Acceptable use</h2>
+  <p>You agree to use the system lawfully and not to:</p>
+  <ul>
+    <li>try to reach another shop's or branch's data, or bypass permissions or security controls.</li>
+    <li>run penetration tests against the system or overload it with excessive automated requests without our written permission.</li>
+    <li>upload content that is unlawful or infringes others' rights (product images, logos, complaint attachments).</li>
+    <li>resell the service or make it available to a shop other than the one agreed.</li>
+  </ul>
+
+  <h2>5. Shop data and your responsibilities</h2>
+  <ul>
+    <li>Your shop's data remains yours. You give us a limited license to host and process it only as needed to run the service.</li>
+    <li>You are responsible for the accuracy of what you enter, and for telling your customers what you record about them (name and phone number) and on what legal basis.</li>
+    <li>Sanad does not replace your accounting and tax obligations. Receipts the system issues are for operational use.</li>
+  </ul>
+
+  <h2>6. Backup and restore</h2>
+  <ul>
+    <li>You are responsible for keeping your backup passwords. If they are lost, we cannot decrypt the backups.</li>
+    <li>Restoring replaces the shop's operating data with the backup's contents, so anything done after the backup date is lost. Review the preview screen before confirming.</li>
+    <li>We recommend keeping periodic copies outside the system. We do not guarantee recovery of data lost through an action taken by the shop's users.</li>
+  </ul>
+
+  <h2>7. Offline mode and devices</h2>
+  <ul>
+    <li>Invoices made offline are kept on the device until they upload. Clearing browser data or losing the device before upload can lose them, so reconnect to sync as soon as you can.</li>
+    <li>Printing depends on your device, browser and printer being compatible, and we do not guarantee compatibility with every printer.</li>
+  </ul>
+
+  <h2>8. Third-party services</h2>
+  <p>Some features rely on outside providers (such as Google, if you enable sync). They are subject to their own terms and policies, and we are not responsible for their outages or changes. Details are in the <a href="privacy.html">Privacy Policy</a>.</p>
+
+  <h2>9. Suspension and termination</h2>
+  <ul>
+    <li>We may suspend or archive an account if these terms are breached, if the security of the system or other users is at risk, or if a subscription is not renewed. Suspension blocks all of the shop's users immediately.</li>
+    <li>You may ask to end your account at any time. Your data is not deleted automatically; ask for deletion explicitly as described in the Privacy Policy.</li>
+  </ul>
+
+  <h2>10. Availability and changes</h2>
+  <p>We make reasonable efforts to keep the service running and the data accurate, but the service may be interrupted for maintenance or for reasons beyond our control. We may add, change or retire features while taking care not to harm your data.</p>
+
+  <h2>11. Intellectual property</h2>
+  <p>The Sanad name, logo and the system's software belong to the Sanad team. You may not copy, reverse-engineer or redistribute the system.</p>
+
+  <h2>12. Disclaimer and limits of liability</h2>
+  <ul>
+    <li>The service is provided “as is”.</li>
+    <li>To the extent the law allows, we are not liable for indirect loss or lost profit, nor for loss caused by internet outages, third-party failures or user data-entry errors.</li>
+    <li>To the extent the law allows, our total liability does not exceed the subscription fee paid for the current period.</li>
+  </ul>
+
+  <h2>13. Governing law</h2>
+  <p>These terms are governed by Egyptian law, and the competent Egyptian courts have jurisdiction over any dispute arising from them.</p>
+
+  <h2>14. Changes to these terms</h2>
+  <p>We may update these terms, we show the date of the latest update at the top, and we notify account owners of material changes by email or inside the system. Continuing to use the service afterwards means you accept them.</p>
+
+  <h2>15. Contact</h2>
+  <p><a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a></p>
+  <p>Or reach us on: <a href="https://wa.me/201119638778" target="_blank" rel="noopener">WhatsApp</a> · <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a></p>
+</article>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <nav aria-label="Footer">
+      <a href="index.html"><span class="ar">الرئيسية</span><span class="en">Home</span></a>
+      <a href="privacy.html"><span class="ar">سياسة الخصوصية</span><span class="en">Privacy Policy</span></a>
+      <a href="mailto:contact@sanad-pos.com">contact@sanad-pos.com</a>
+      <a href="https://wa.me/201119638778" target="_blank" rel="noopener"><span class="ar">واتساب</span><span class="en">WhatsApp</span></a>
+      <a href="https://www.facebook.com/Sanadpos.eg" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/sanadpos.eg/" target="_blank" rel="noopener">Instagram</a>
+    </nav>
+    <span>© 2026 Sanad-POS</span>
+  </div>
+</footer>
 
 </body>
 </html>
